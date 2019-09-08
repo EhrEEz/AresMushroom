@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navpane {
+  background: #ababab;
+}
+
+.navpane a, .navpane u {
+  text-decoration: none !important;
+}

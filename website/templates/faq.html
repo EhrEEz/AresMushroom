@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extraStyle %}
+<style>
+
+</style>
+{% endblock extraStyle %}
+
+
+{% block title %}
+FAQs
+{% endblock title %}
+
+{% block body %}
+<div id="main">
+<section class="faqSection">
+<div class="faq">
+  {% for obj in object_list %}
+    <div class="entry">
+      <div class="content" id="entry-short">
+      <h3>{{obj.title}}</h3>
+      <p>{{obj.description|truncatewords:43}}</p>
+      <button class="extend" data-id="{{obj.pk}}" id="more">Read More</button>
+      </div>
+    </div>
+  {% endfor %}
+
+
+</div>
+</section>
+</div>
+
+{% endblock body %}
+
+{% block extraJs %}
+<script type="text/javascript" language="javascript">
+    $(document).on('click', '#more', function(){
+      var pk = $(this).data('id');
+      console.log(html())
+      var faqList = $('#main').html();
+      $('#entry-short').load("/faq/"+ pk +" #entry-details", function() {
+        $('.back').click(function(){
+          $('#entry-short').html(faqList);
+        });
+      });
+    });
+</script>
+{% endblock extraJs %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extraStyle %}
+<style>
+
+</style>
+{% endblock extraStyle %}
+
+
+{% block title %}
+Gallery
+{% endblock title %}
+
+{% block body %}
+<div id="main">
+<section class="gallerySection">
+<div class="gallery">
+  {% for obj in object_list %}
+  <figure data-id="{{obj.pk}}">
+    <img src="{{obj.photo.url}}" />
+
+    <figcaption>
+      <div class="additional">
+        <p id="caption">{{obj.caption}}</p>
+      </div>
+      <p id="credit">{{obj.credit}}</p>
+    </figcaption>
+
+
+  </figure>
+  {% endfor %}
+
+
+</div>
+</section>
+</div>
+
+{% endblock body %}
+
+{% block extraJs %}
+<script type="text/javascript" language="javascript">
+    $(document).on('click','figure', function(){
+      var pk = $(this).data('id');
+      var galleryList = $('#main').html();
+      $('#main').load("/gallery/"+ pk +" #content", function() {
+        $('.close').click(function(){
+          $('#main').html(galleryList);
+          //$('#main').load("/gallery/", function() {
+          /// can add another function here
+      //  });
+      });
+
+        });
+    });
+
+</script>
+{% endblock extraJs %}

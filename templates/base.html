@@ -1,0 +1,49 @@
+{% load static tags %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="shortcut icon" type="image/png" href="{% static 'images/logo/favicon.png' %}"/>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <title>AresMushroom - {% block title %}{% endblock title %}</title>
+
+  {% block extraStyle %}
+  {% endblock extraStyle %}
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/app.js' %}"></script>
+</head>
+
+<body>
+  <div class="container-fluid px-0 ">
+    <nav class='navpane {{request.path|is_detail}}'>
+      <ul>
+        <li><a href="{% url 'home' %}" class="{{request.path|active_link:'home'}}" id="link1">Home</a></li>
+        <li id="link2"><a href="{% url 'home' %}" class="{{request.path|active_link:'home'}}">About Us</a></li>
+        <li id="link3"><a href="{% url 'gallery' %}" class="{{request.path|active_link:'gallery'}}{% block detailgallery %}{% endblock detailgallery %}">Photos</a></li>
+        <li id="link4"><a href="{% url 'faq' %}" class="{{request.path|active_link:'faq'}}{% block detailfaq %}{% endblock detailfaq %}">FAQ's</a></li>
+        <li id="link5"><a href="{% url 'home' %}" class="{{request.path|active_link:'home'}}">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container-fluid px-0 mt-2 " id="container">
+
+    {% block body %}
+    {% endblock body %}
+  </div>
+  {% block extraJs %}
+  {% endblock extraJs %}
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

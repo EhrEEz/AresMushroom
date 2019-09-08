@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Photo {{obj.id}}
+{% endblock title %}
+
+{% block body %}
+
+<div id="entry-details">
+  <h3>{{object.title}}</h3>
+  <p>{{object.description}}</p>
+  <button class="back" id="less">Show Less</button>
+</div>
+
+{% endblock body %}
+{% block extraJs %}
+<script type="text/javascript" language="javascript">
+    $('.back').click(function(){
+      $('#entry-details').load("/faq" + " #entry-short", function() {
+        /// can add another function here
+      });
+    });
+</script>
+{% endblock extraJs %}
+{% block detailfaq %}
+active
+{% endblock detailfaq %}

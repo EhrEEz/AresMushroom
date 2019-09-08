@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extraStyle %}
+<style>
+.hero{
+  background: url('{% static 'images/background.jpg' %}');
+  background-size: cover;
+  background-position: -20% 20%;
+  background-repeat: no-repeat;
+}
+</style>
+{% endblock extraStyle %}
+
+
+{% block title %}
+Home
+{% endblock title %}
+
+
+{% block body %}
+  <div class="hero">
+    <div class="transparent">
+      <img src="{% static 'images/logo/logo.png' %}" />
+    </div>
+  </div>
+{% endblock body %}

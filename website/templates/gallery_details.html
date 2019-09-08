@@ -1,0 +1,40 @@
+
+{% load static %}
+
+{% block title %}
+Photo {{obj.id}}
+{% endblock title %}
+
+{% block body %}
+<div id="content">
+<div class="close" data-id="{{object.id}}">
+  <img id="close" src="{% static '/images/close.png' %}" />
+  </div>
+<section class="detailSection">
+
+  <div class="imagewrap">
+    <img src="{{object.photo.url}}" />
+  </div>
+  <div class="content">
+      <h1>{{object.caption}}</h1>
+    <p>{{object.description}}</p>
+    <span>{{object.credit}}</span>
+  </div>
+
+  <p id="credit">{{obj.credit}}</p>
+  </section>
+</div>
+{% endblock body %}
+{% block extraJs %}
+<script type="text/javascript" language="javascript">
+  var pk = $(this).data('id');
+    $(document).on('click','.close', function(){
+          $('#content').load("/gallery/ #main", function(){
+        });
+      });
+
+</script>
+{% endblock extraJs %}
+{% block detailgallery %}
+active
+{% endblock detailgallery %}
