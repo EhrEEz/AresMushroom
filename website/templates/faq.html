@@ -20,8 +20,8 @@ FAQs
     <div class="entry">
       <div class="content" id="entry-short">
       <h3>{{obj.title}}</h3>
-      <p>{{obj.description|truncatewords:43}}</p>
-      <button class="extend" data-id="{{obj.pk}}" id="more">Read More</button>
+      <p>{{obj.description|truncatewords:42}}</p>
+      <button class="extend" data-id="{{obj.pk}}" id="more">Show More</button>
       </div>
     </div>
   {% endfor %}
@@ -37,13 +37,14 @@ FAQs
 <script type="text/javascript" language="javascript">
     $(document).on('click', '#more', function(){
       var pk = $(this).data('id');
-      console.log(html())
       var faqList = $('#main').html();
-      $('#entry-short').load("/faq/"+ pk +" #entry-details", function() {
+      $('#main').load("/faq/"+ pk +" #entry-details", function() {
         $('.back').click(function(){
-          $('#entry-short').html(faqList);
+          $('#main').html(faqList);
+          window.history.pushState("faq", "faq", "/faq/");
         });
       });
+      window.history.pushState('faq-details', "faq" + pk, '/faq/' + pk);
     });
 </script>
 {% endblock extraJs %}

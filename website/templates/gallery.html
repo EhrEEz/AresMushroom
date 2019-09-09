@@ -22,9 +22,9 @@ Gallery
 
     <figcaption>
       <div class="additional">
-        <p id="caption">{{obj.caption}}</p>
+        <p class="caption">{{obj.caption}}</p>
       </div>
-      <p id="credit">{{obj.credit}}</p>
+      <p class="credit">{{obj.credit}}</p>
     </figcaption>
 
 
@@ -43,16 +43,18 @@ Gallery
     $(document).on('click','figure', function(){
       var pk = $(this).data('id');
       var galleryList = $('#main').html();
-      $('#main').load("/gallery/"+ pk +" #content", function() {
+      $('#main').load("/gallery/"+ pk +" #main-content", function() {
         $('.close').click(function(){
           $('#main').html(galleryList);
+          window.history.pushState('gallery', "gallery", '/gallery/');
           //$('#main').load("/gallery/", function() {
           /// can add another function here
       //  });
       });
 
-        });
-    });
 
+        });
+        window.history.pushState('detail', pk + " details", '/gallery/' + pk);
+    });
 </script>
 {% endblock extraJs %}
