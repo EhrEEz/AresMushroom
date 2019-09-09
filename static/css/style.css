@@ -371,9 +371,69 @@ nav.navpane.short {
   color: white;
 }
 
-.modal-content {
-  width: auto;
-  border: 0;
+.message_box {
+  width: 80rem;
+  margin: 8em auto;
+  padding: 2em;
+  font-family: "Montserrat Regular", sans-serif;
+  background: rgba(200, 200, 200, 0.2);
+  border-radius: 5em;
+}
+
+.message_box h2 {
+  font-family: "Lexend Deca", sans-serif;
+  text-align: center;
   margin: auto;
-  background: NONE;
+  padding: 0.65em;
+}
+
+.message_box .form-group {
+  padding: 0.65em;
+  margin: auto;
+}
+
+.message_box .form-group label {
+  text-align: right;
+  line-height: 35px;
+}
+
+.message_box .form-group .form-name {
+  width: 20rem;
+}
+
+.message_box .form-group .form-email {
+  width: 25rem;
+}
+
+.message_box .form-group .form-phone {
+  width: 15rem;
+}
+
+.message_box .form-group .form-title {
+  width: 70rem;
+}
+
+.message_box .form-group .form-description {
+  width: 70rem;
+}
+
+.message_box .form-group .form-name, .message_box .form-group .form-phone, .message_box .form-group .form-title, .message_box .form-group .form-description, .message_box .form-group .form-email {
+  border-color: #0ABFA1;
+  background: none;
+}
+
+.message_box .send {
+  border: solid 1px #0ABFA1;
+  background: none;
+  padding: 0.3em 1em;
+  border-radius: 1em;
+  color: #0ABFA1;
+  display: block;
+  width: 5em;
+  margin: 2em auto 0 auto;
+}
+
+.message_box .send:hover, .message_box .send:focus {
+  color: white;
+  background: #0ABFA1;
 }

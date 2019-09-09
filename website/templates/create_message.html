@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block body %}
+<div class="message_box">
+  <h2>Message Us:</h2>
+  <form method="POST" class="message_form" enctype="multipart/form-data" novalidate id="form">{% csrf_token %}
+    {{form.media}}
+      {% bootstrap_form form %}
+
+      <button type="submit" class="send">Send</button>
+  </form>
+</div>
+
+{% endblock body %}
+
+{% block extraJs %}
+
+{% endblock extraJs %}

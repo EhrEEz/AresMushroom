@@ -376,9 +376,64 @@ nav.navpane.short{
     color: white;
   }
 }
-.modal-content{
-  width:auto;
-  border: 0;
-  margin: auto;
-  background: NONE;
+// message_box
+.message_box{
+  width: 80rem;
+  margin: 8em auto;
+  padding: 2em;
+  font-family: $desc-font;
+  background: rgba(200, 200, 200, 0.2);
+  border-radius: 5em;
+
+  h2{
+    font-family:$head-font;
+    text-align: center;
+    margin: auto;
+    padding: 0.65em;
+
+  }
+
+  .form-group{
+    padding: 0.65em;
+    margin: auto;
+
+    label{
+      text-align: right;
+      line-height: 35px;
+    }
+
+    .form-name{
+      width: 20rem;
+    }
+    .form-email{
+      width: 25rem;
+    }
+    .form-phone{
+      width: 15rem;
+    }
+    .form-title{
+      width: 70rem;
+    }
+    .form-description{
+      width: 70rem;
+    }
+    .form-name, .form-phone, .form-title, .form-description, .form-email{
+      border-color: $nav-active;
+      background: none;
+    }
+  }
+  .send{
+    border: solid 1px $nav-active;
+    background: none;
+    padding: 0.3em 1em;
+    border-radius: 1em;
+    color: $nav-active;
+    display: block;
+    width: 5em;
+    margin: 2em auto 0 auto;
+  }
+  .send:hover, .send:focus{
+    color: white;
+    background: $nav-active;
+  }
 }

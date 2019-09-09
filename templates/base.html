@@ -1,4 +1,4 @@
-{% load static tags %}
+{% load static tags bootstrap4 %}
 <!doctype html>
 <html lang="en">
 
@@ -35,7 +35,7 @@
     </nav>
   </div>
   <div class="container-fluid px-0 mt-2 " id="container">
-
+    {% bootstrap_messages %}
     {% block body %}
     {% endblock body %}
   </div>

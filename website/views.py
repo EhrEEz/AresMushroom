@@ -1,9 +1,17 @@
 from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic.edit import CreateView
+
+from django.urls import reverse
+
+from django.contrib import messages
+
 from django.contrib.auth.models import User
 
 from el_pagination.views import AjaxListView
 
 from .models import Gallery, FAQ, Message
+
+from .forms import MessageForm
 
 
 class BaseView(TemplateView):
@@ -41,3 +49,13 @@ class FAQView(AjaxListView):
 class FAQDetailView(DetailView):
     model = FAQ
     template_name = "faq_details.html"
+
+
+class MessageView(CreateView):
+    model = Message
+    form_class = MessageForm
+    template_name = "create_message.html"
+
+    def get_success_url(self):
+        messages.success(self.request, "Your message has been posted")
+        return reverse("gallery")

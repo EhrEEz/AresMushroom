@@ -1,11 +1,11 @@
-from django.urls import path, include
+from django.urls import path
 from .views import (
     HomeView,
-    BaseView,
     GalleryView,
     GalleryDetailView,
     FAQView,
     FAQDetailView,
+    MessageView,
 )
 
 urlpatterns = [
@@ -14,4 +14,5 @@ urlpatterns = [
     path("gallery/<int:pk>/", GalleryDetailView.as_view(), name="detail"),
     path("faq/", FAQView.as_view(), name="faq"),
     path("faq/<int:pk>/", FAQDetailView.as_view(), name="faq_detail"),
+    path("message/", MessageView.as_view(), name="new_message"),
 ]
