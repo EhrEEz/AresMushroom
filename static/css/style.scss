@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Abel|Lexend+Deca&display=swap');
-$hover-color : #6E70FF;
+$hover-color : #48E8D2;
 $nav-static: #738785;
 $nav-active: #0ABFA1;
 $title-color: #2D13A8;
@@ -16,7 +16,7 @@ body{
 
 .navpane{
   padding: 2em 0;
-  background: white;
+  background: white ;
   text-align: center;
   margin:auto;
   font-family: 'Montserrat', sans-serif;
@@ -51,8 +51,7 @@ body{
     li:hover{
       a{
         color: $hover-color;
-        border-bottom:solid 2px;
-        border-bottom-color:$hover-color;
+        border-bottom: none;
       }
     }
     .active{
@@ -379,7 +378,7 @@ nav.navpane.short{
 // message_box
 .message_box{
   width: 80rem;
-  margin: 8em auto;
+  margin: 5em auto;
   padding: 2em;
   font-family: $desc-font;
   background: rgba(200, 200, 200, 0.2);
@@ -435,5 +434,54 @@ nav.navpane.short{
   .send:hover, .send:focus{
     color: white;
     background: $nav-active;
+  }
+}
+
+// ContactPage
+
+.contact-section{
+  width: 90%;
+  margin: 8rem auto 0 auto;
+  padding: 1em;
+
+  h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: $title-color;
+    font-family: $head-font;
+  }
+
+  .basic-contact{
+    margin-top: 5em;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    background: rgba(220, 220, 220, 0.2);
+
+    .contact-block{
+      height: 250px;
+      margin: 2px;
+      padding: 3em;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+
+      h3{
+        font-family: 'Lexend Deca', sans-serif;
+        text-transform: capitalize;
+        margin-bottom: 1em;
+        color: $title-color;
+      }
+      p{
+        font-family: $desc-font;
+        line-height: 15px;
+      }
+    }
+  }
+  .map{
+    margin: 2em auto;
+    .mapouter{
+      margin: auto;
+    }
   }
 }

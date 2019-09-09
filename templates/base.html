@@ -30,7 +30,7 @@
         <li id="link2"><a href="{% url 'home' %}" class="{{request.path|active_link:'home'}}">About Us</a></li>
         <li id="link3"><a href="{% url 'gallery' %}" class="{{request.path|active_link:'gallery'}}{% block detailgallery %}{% endblock detailgallery %}">Photos</a></li>
         <li id="link4"><a href="{% url 'faq' %}" class="{{request.path|active_link:'faq'}}{% block detailfaq %}{% endblock detailfaq %}">FAQ's</a></li>
-        <li id="link5"><a href="{% url 'home' %}" class="{{request.path|active_link:'home'}}">Contact Us</a></li>
+        <li id="link5"><a href="{% url 'contact' %}" class="{{request.path|active_link:'contact'}}">Contact Us</a></li>
       </ul>
     </nav>
   </div>

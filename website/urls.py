@@ -6,6 +6,7 @@ from .views import (
     FAQView,
     FAQDetailView,
     MessageView,
+    ContactUsView,
 )
 
 urlpatterns = [
@@ -15,4 +16,5 @@ urlpatterns = [
     path("faq/", FAQView.as_view(), name="faq"),
     path("faq/<int:pk>/", FAQDetailView.as_view(), name="faq_detail"),
     path("message/", MessageView.as_view(), name="new_message"),
+    path("contact/", ContactUsView.as_view(), name="contact"),
 ]

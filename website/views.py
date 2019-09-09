@@ -59,3 +59,8 @@ class MessageView(CreateView):
     def get_success_url(self):
         messages.success(self.request, "Your message has been posted")
         return reverse("gallery")
+
+
+class ContactUsView(TemplateView):
+    model = Message
+    template_name = "contact.html"

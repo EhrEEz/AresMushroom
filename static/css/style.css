@@ -42,9 +42,8 @@ body {
 }
 
 .navpane ul li:hover a {
-  color: #6E70FF;
-  border-bottom: solid 2px;
-  border-bottom-color: #6E70FF;
+  color: #48E8D2;
+  border-bottom: none;
 }
 
 .navpane ul .active {
@@ -373,7 +372,7 @@ nav.navpane.short {
 
 .message_box {
   width: 80rem;
-  margin: 8em auto;
+  margin: 5em auto;
   padding: 2em;
   font-family: "Montserrat Regular", sans-serif;
   background: rgba(200, 200, 200, 0.2);
@@ -436,4 +435,54 @@ nav.navpane.short {
 .message_box .send:hover, .message_box .send:focus {
   color: white;
   background: #0ABFA1;
+}
+
+.contact-section {
+  width: 90%;
+  margin: 8rem auto 0 auto;
+  padding: 1em;
+}
+
+.contact-section h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #2D13A8;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.contact-section .basic-contact {
+  margin-top: 5em;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  background: rgba(220, 220, 220, 0.2);
+}
+
+.contact-section .basic-contact .contact-block {
+  height: 250px;
+  margin: 2px;
+  padding: 3em;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.contact-section .basic-contact .contact-block h3 {
+  font-family: 'Lexend Deca', sans-serif;
+  text-transform: capitalize;
+  margin-bottom: 1em;
+  color: #2D13A8;
+}
+
+.contact-section .basic-contact .contact-block p {
+  font-family: "Montserrat Regular", sans-serif;
+  line-height: 15px;
+}
+
+.contact-section .map {
+  margin: 2em auto;
+}
+
+.contact-section .map .mapouter {
+  margin: auto;
 }
