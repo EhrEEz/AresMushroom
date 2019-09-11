@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Stockport';
+    src: url('fonts/stockport/Stockport.woff2') format('woff2'),
+        url('fonts/stockport/Stockport.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stockport Double Outline';
+    src: url('fonts/stockport/Stockport-Double-Outline.woff2') format('woff2'),
+        url('fonts/stockport/Stockport-Double-Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stockport Outline';
+    src: url('fonts/stockport/Stockport-Outline.woff2') format('woff2'),
+        url('fonts/stockport/Stockport-Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stockport Shadow';
+    src: url('fonts/stockport/Stockport-Shadow.woff2') format('woff2'),
+        url('fonts/stockport/Stockport-Shadow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stockport Double Outline';
+    src: url('fonts/stockport/Stockport-Double-Outline.woff2') format('woff2'),
+        url('fonts/stockport/Stockport-Double-Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stockport Shadow';
+    src: url('fonts/stockport/Stockport-Shadow.woff2') format('woff2'),
+        url('fonts/stockport/Stockport-Shadow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stockport Outline';
+    src: url('fonts/stockport/Stockport-Outline.woff2') format('woff2'),
+        url('fonts/stockport/Stockport-Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stockport Regular';
+    src: url('fonts/stockport/Stockport.woff2') format('woff2'),
+        url('fonts/stockport/Stockport.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -20,6 +20,7 @@ def active_link(value, link):
 
     if value == link:
         return "active"
+    return ""
 
 
 @register.filter
@@ -67,3 +68,18 @@ def is_detail(value):
     v = link_data[len(link_data) - 2]
     if v.isnumeric() is True:
         return "short"
+
+
+@register.filter
+def transparent(value, link):
+    link_data = link.split(",")
+    link_data = list(map(str.strip, link_data))
+
+    if len(link_data) == 1:
+        link = reverse(link_data[0])
+    else:
+        link = reverse(link_data[0], args=(link_data[1]))
+
+    if value == link:
+        return "transparent"
+    return ""

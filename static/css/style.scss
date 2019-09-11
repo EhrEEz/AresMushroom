@@ -1,27 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Abel|Lexend+Deca&display=swap');
-$hover-color : #48E8D2;
+
+$hover-color : #E87B80;
 $nav-static: #738785;
-$nav-active: #0ABFA1;
+$nav-active: #051E85;
 $title-color: #2D13A8;
 $description-color: #494D52;
 $head-font:'Lexend Deca', sans-serif;
 $desc-font:'Montserrat Regular', sans-serif;
 
 body{
-  background-color: white;
+  background: white;
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
 .navpane{
-  padding: 2em 0;
+  padding: 1em 0;
   background: white ;
   text-align: center;
   margin:auto;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: 500;
+  font-family:'Stockport Regular';
+  letter-spacing: 3px;
+  font-size: 20px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -36,31 +39,32 @@ body{
 
   ul{
     list-style-type: none;
-    margin-bottom: none;
+    margin-bottom: 0;
 
     li{
       display: inline-block;
-      padding-left: 15px;
-      padding-right: 15px;
+      padding: 0 0.8em;
 
-      span{
-        opacity:0;
+      #logo{
+        img{
+          height:3.5em;
+        }
       }
+    }
+  }
+
+    .active{
+      color: $nav-active;
     }
 
     li:hover{
       a{
         color: $hover-color;
-        border-bottom: none;
       }
-    }
-    .active{
-      color: $nav-active;
-      border-bottom: dashed 2px  $nav-active;
     }
 
   }
-}
+
 @keyframes yourAnimation{
     0%{
         transform: rotate(0) translateY(-20%);
@@ -76,12 +80,31 @@ nav.navpane.short{
   padding-top: 1.2em;
   padding-bottom: 1.2em;
 }
+nav.navpane.transparent{
+  background: rgba(255,255,255,0.9);
 
+  a, u{
+    text-decoration: none !important;
+    color: $nav-static;
+  }
+
+  ul{
+    li{
+      }
+      .active{
+        color: $nav-active;
+      }
+      :hover{
+        a{
+          color: $hover-color;
+        }
+    }
+  }
+}
 
 .hero{
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
-  margin-top: 120px;
   height: 550px;
 
   .transparent{
@@ -164,6 +187,8 @@ nav.navpane.short{
       }
     }
     figure:hover{
+      box-shadow: 0px 0px 5px rgb(155,155,155);
+
       figcaption{
         background: rgba(0, 0, 0, .7);
         cursor: pointer;
@@ -381,7 +406,7 @@ nav.navpane.short{
   margin: 5em auto;
   padding: 2em;
   font-family: $desc-font;
-  background: rgba(200, 200, 200, 0.2);
+  background: rgba(200, 200, 200, 0.1);
   border-radius: 5em;
 
   h2{
@@ -417,6 +442,11 @@ nav.navpane.short{
       width: 70rem;
     }
     .form-name, .form-phone, .form-title, .form-description, .form-email{
+      border-color: $nav-active;
+      background: none;
+    }
+    .form-name:focus, .form-phone:focus, .form-title:focus, .form-description:focus, .form-email:focus{
+      outline-color: $nav-active;
       border-color: $nav-active;
       background: none;
     }

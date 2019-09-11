@@ -1,19 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Abel|Lexend+Deca&display=swap");
 body {
-  background-color: white;
+  background: white;
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
 .navpane {
-  padding: 2em 0;
+  padding: 1em 0;
   background: white;
   text-align: center;
   margin: auto;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: 500;
+  font-family: 'Stockport Regular';
+  letter-spacing: 3px;
+  font-size: 20px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -28,27 +30,24 @@ body {
 
 .navpane ul {
   list-style-type: none;
-  margin-bottom: none;
+  margin-bottom: 0;
 }
 
 .navpane ul li {
   display: inline-block;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 0.8em;
 }
 
-.navpane ul li span {
-  opacity: 0;
+.navpane ul li #logo img {
+  height: 3.5em;
 }
 
-.navpane ul li:hover a {
-  color: #48E8D2;
-  border-bottom: none;
+.navpane .active {
+  color: #051E85;
 }
 
-.navpane ul .active {
-  color: #0ABFA1;
-  border-bottom: dashed 2px #0ABFA1;
+.navpane li:hover a {
+  color: #E87B80;
 }
 
 @keyframes yourAnimation {
@@ -67,10 +66,26 @@ nav.navpane.short {
   padding-bottom: 1.2em;
 }
 
+nav.navpane.transparent {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+nav.navpane.transparent a, nav.navpane.transparent u {
+  text-decoration: none !important;
+  color: #738785;
+}
+
+nav.navpane.transparent ul .active {
+  color: #051E85;
+}
+
+nav.navpane.transparent ul :hover a {
+  color: #E87B80;
+}
+
 .hero {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
-  margin-top: 120px;
   height: 550px;
 }
 
@@ -153,6 +168,10 @@ nav.navpane.short {
   opacity: 0;
   transform: scale(1.3);
   transition: all 0.5s;
+}
+
+.gallerySection .gallery figure:hover {
+  box-shadow: 0px 0px 5px #9b9b9b;
 }
 
 .gallerySection .gallery figure:hover figcaption {
@@ -288,8 +307,8 @@ nav.navpane.short {
 
 .faqSection .entry .content .extend {
   background: rgba(0, 0, 0, 0);
-  color: #0ABFA1;
-  border: solid 1px #0ABFA1;
+  color: #051E85;
+  border: solid 1px #051E85;
   border-radius: 10px;
   text-align: center;
   float: right;
@@ -301,7 +320,7 @@ nav.navpane.short {
 }
 
 .faqSection .entry .content .extend:hover {
-  background: #0ABFA1;
+  background: #051E85;
   color: white;
 }
 
@@ -351,8 +370,8 @@ nav.navpane.short {
 .faqDetailSection .back {
   width: 110px;
   background: rgba(0, 0, 0, 0);
-  color: #0ABFA1;
-  border: solid 1px #0ABFA1;
+  color: #051E85;
+  border: solid 1px #051E85;
   border-radius: 10px;
   text-align: center;
   position: absolute;
@@ -366,7 +385,7 @@ nav.navpane.short {
 }
 
 .faqDetailSection .back:hover {
-  background: #0ABFA1;
+  background: #051E85;
   color: white;
 }
 
@@ -375,7 +394,7 @@ nav.navpane.short {
   margin: 5em auto;
   padding: 2em;
   font-family: "Montserrat Regular", sans-serif;
-  background: rgba(200, 200, 200, 0.2);
+  background: rgba(200, 200, 200, 0.1);
   border-radius: 5em;
 }
 
@@ -417,16 +436,22 @@ nav.navpane.short {
 }
 
 .message_box .form-group .form-name, .message_box .form-group .form-phone, .message_box .form-group .form-title, .message_box .form-group .form-description, .message_box .form-group .form-email {
-  border-color: #0ABFA1;
+  border-color: #051E85;
+  background: none;
+}
+
+.message_box .form-group .form-name:focus, .message_box .form-group .form-phone:focus, .message_box .form-group .form-title:focus, .message_box .form-group .form-description:focus, .message_box .form-group .form-email:focus {
+  outline-color: #051E85;
+  border-color: #051E85;
   background: none;
 }
 
 .message_box .send {
-  border: solid 1px #0ABFA1;
+  border: solid 1px #051E85;
   background: none;
   padding: 0.3em 1em;
   border-radius: 1em;
-  color: #0ABFA1;
+  color: #051E85;
   display: block;
   width: 5em;
   margin: 2em auto 0 auto;
@@ -434,7 +459,7 @@ nav.navpane.short {
 
 .message_box .send:hover, .message_box .send:focus {
   color: white;
-  background: #0ABFA1;
+  background: #051E85;
 }
 
 .contact-section {

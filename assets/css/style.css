@@ -1,12 +1,509 @@
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Abel|Lexend+Deca&display=swap");
 body {
-  margin: 0;
+  background: white;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   padding: 0;
 }
 
 .navpane {
-  background: #ababab;
+  padding: 2em 0;
+  background: white;
+  text-align: center;
+  margin: auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  animation: yourAnimation 0.4s 1 0s ease-in;
 }
 
 .navpane a, .navpane u {
   text-decoration: none !important;
+  color: #738785;
+}
+
+.navpane ul {
+  list-style-type: none;
+  margin-bottom: none;
+}
+
+.navpane ul li {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navpane ul li span {
+  opacity: 0;
+}
+
+.navpane ul li:hover a {
+  color: #48E8D2;
+  border-bottom: none;
+}
+
+.navpane ul .active {
+  color: #0ABFA1;
+  border-bottom: dashed 2px #0ABFA1;
+}
+
+.stamp img {
+  display: block;
+  position: fixed;
+  top: 4em;
+  left: 3em;
+  height: 100px;
+  width: 100px;
+  z-index: 5;
+}
+
+@keyframes yourAnimation {
+  0% {
+    transform: rotate(0) translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+nav.navpane.short {
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+}
+
+nav.navpane.transparent {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.hero {
+  width: 100%;
+  margin: 0 auto;
+  height: 550px;
+}
+
+.hero .transparent {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 150px 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero .transparent img {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallerySection {
+  padding: 1em;
+  margin-top: 120px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallerySection .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.gallerySection .gallery figure {
+  margin: 3px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.gallerySection .gallery figure img {
+  height: 308px;
+  width: calc(100%+150px);
+  transform: scale(1.12);
+  transform: translate3d(2%, -1%, -1%);
+  transition: all .7s;
+}
+
+.gallerySection .gallery figure figcaption {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0);
+  transition: all 0.5s;
+}
+
+.gallerySection .gallery figure figcaption .additional {
+  overflow-wrap: break-word;
+  padding: 7em 1em 0 1em;
+}
+
+.gallerySection .gallery figure figcaption .additional .caption {
+  font-style: italic;
+  opacity: 1;
+}
+
+.gallerySection .gallery figure figcaption .credit {
+  text-transform: capitalize;
+  position: absolute;
+  bottom: 0;
+  left: 1em;
+  opacity: 0;
+  transition: all 0.6s;
+}
+
+.gallerySection .gallery figure .additional {
+  opacity: 0;
+  transform: scale(1.3);
+  transition: all 0.5s;
+}
+
+.gallerySection .gallery figure:hover figcaption {
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.gallerySection .gallery figure:hover .additional {
+  transform: scale(1);
+  cursor: pointer;
+  opacity: 1;
+}
+
+.gallerySection .gallery figure:hover img {
+  transform: scale(1);
+  transform: translate3d(0, 0, 0);
+  cursor: pointer;
+  opacity: 1;
+}
+
+.gallerySection .gallery figure:hover .credit {
+  opacity: 1;
+}
+
+.detailSection {
+  padding: 1em;
+  margin-top: 5em;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.detailSection .imagewrap {
+  width: 450px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.detailSection .imagewrap img {
+  object-fit: cover;
+  object-position: 50% -20%;
+  width: 450px;
+  height: 620px;
+}
+
+.detailSection .content {
+  padding: 1em;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detailSection .content h1 {
+  text-align: center;
+  margin: 0 1em 1em 1em;
+  font-family: "Lexend Deca", sans-serif;
+  color: #2D13A8;
+  text-transform: capitalize;
+  top: 0;
+}
+
+.detailSection .content span {
+  text-align: right;
+  text-transform: capitalize;
+  color: #494D52;
+  margin: 3em 5em 0 0;
+}
+
+.detailSection .content p {
+  margin: 1.5em 3em 0 3em;
+  vertical-align: middle;
+  color: #494D52;
+  font-family: "Montserrat Regular", sans-serif;
+  text-align: center;
+  font-size: 18px;
+}
+
+.close img {
+  width: 1em;
+  height: 1em;
+  display: block;
+  position: fixed;
+  top: 5em;
+  right: 5em;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.faqSection {
+  width: 90%;
+  margin: 8em auto 0 auto;
+}
+
+.faqSection .entry {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  background: rgba(200, 200, 200, 0.1);
+  border-radius: 1em;
+}
+
+.faqSection .entry .content h3 {
+  font-family: "Lexend Deca", sans-serif;
+  color: #2D13A8;
+  font-size: 20px;
+  text-overflow: clip;
+  text-transform: capitalize;
+  padding: 1rem;
+}
+
+.faqSection .entry .content p {
+  font-family: "Montserrat Regular", sans-serif;
+  font-weight: 100;
+  color: #494D52;
+  text-align: justify;
+  padding: 1rem;
+}
+
+.faqSection .entry .content .extend {
+  background: rgba(0, 0, 0, 0);
+  color: #0ABFA1;
+  border: solid 1px #0ABFA1;
+  border-radius: 10px;
+  text-align: center;
+  float: right;
+  margin: 1em;
+  padding: 0.2em 1em;
+  height: 2em;
+  line-height: 0.6em;
+  transition: 0.4s;
+}
+
+.faqSection .entry .content .extend:hover {
+  background: #0ABFA1;
+  color: white;
+}
+
+.faqSection .entry:hover {
+  background: rgba(200, 255, 200, 0.2);
+}
+
+.faqDetailSection {
+  width: 90%;
+  margin: 10rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.faqDetailSection a {
+  width: 100%;
+  margin: auto;
+}
+
+.faqDetailSection a img {
+  padding: 1em;
+  object-fit: cover;
+  height: 400px;
+  width: 100%;
+  object-position: 0 30%;
+  margin: 1em auto;
+}
+
+.faqDetailSection h2 {
+  font-family: "Lexend Deca", sans-serif;
+  color: #2D13A8;
+  font-size: 2rem;
+  text-overflow: clip;
+  text-transform: capitalize;
+  padding: 1rem;
+}
+
+.faqDetailSection p {
+  font-family: "Montserrat Regular", sans-serif;
+  font-weight: 100;
+  color: #494D52;
+  text-align: justify;
+  padding: 1rem;
+  width: 100%;
+}
+
+.faqDetailSection .back {
+  width: 110px;
+  background: rgba(0, 0, 0, 0);
+  color: #0ABFA1;
+  border: solid 1px #0ABFA1;
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  top: 6.5em;
+  right: 5em;
+  margin: 1em;
+  padding: 0.2em 1em;
+  height: 2em;
+  line-height: 0.6em;
+  transition: 0.4s;
+}
+
+.faqDetailSection .back:hover {
+  background: #0ABFA1;
+  color: white;
+}
+
+.message_box {
+  width: 80rem;
+  margin: 5em auto;
+  padding: 2em;
+  font-family: "Montserrat Regular", sans-serif;
+  background: rgba(200, 200, 200, 0.1);
+  border-radius: 5em;
+}
+
+.message_box h2 {
+  font-family: "Lexend Deca", sans-serif;
+  text-align: center;
+  margin: auto;
+  padding: 0.65em;
+}
+
+.message_box .form-group {
+  padding: 0.65em;
+  margin: auto;
+}
+
+.message_box .form-group label {
+  text-align: right;
+  line-height: 35px;
+}
+
+.message_box .form-group .form-name {
+  width: 20rem;
+}
+
+.message_box .form-group .form-email {
+  width: 25rem;
+}
+
+.message_box .form-group .form-phone {
+  width: 15rem;
+}
+
+.message_box .form-group .form-title {
+  width: 70rem;
+}
+
+.message_box .form-group .form-description {
+  width: 70rem;
+}
+
+.message_box .form-group .form-name, .message_box .form-group .form-phone, .message_box .form-group .form-title, .message_box .form-group .form-description, .message_box .form-group .form-email {
+  border-color: #0ABFA1;
+  background: none;
+}
+
+.message_box .form-group .form-name:focus, .message_box .form-group .form-phone:focus, .message_box .form-group .form-title:focus, .message_box .form-group .form-description:focus, .message_box .form-group .form-email:focus {
+  outline-color: #0ABFA1;
+  border-color: #0ABFA1;
+  background: none;
+}
+
+.message_box .send {
+  border: solid 1px #0ABFA1;
+  background: none;
+  padding: 0.3em 1em;
+  border-radius: 1em;
+  color: #0ABFA1;
+  display: block;
+  width: 5em;
+  margin: 2em auto 0 auto;
+}
+
+.message_box .send:hover, .message_box .send:focus {
+  color: white;
+  background: #0ABFA1;
+}
+
+.contact-section {
+  width: 90%;
+  margin: 8rem auto 0 auto;
+  padding: 1em;
+}
+
+.contact-section h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #2D13A8;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.contact-section .basic-contact {
+  margin-top: 5em;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  background: rgba(220, 220, 220, 0.2);
+}
+
+.contact-section .basic-contact .contact-block {
+  height: 250px;
+  margin: 2px;
+  padding: 3em;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.contact-section .basic-contact .contact-block h3 {
+  font-family: 'Lexend Deca', sans-serif;
+  text-transform: capitalize;
+  margin-bottom: 1em;
+  color: #2D13A8;
+}
+
+.contact-section .basic-contact .contact-block p {
+  font-family: "Montserrat Regular", sans-serif;
+  line-height: 15px;
+}
+
+.contact-section .map {
+  margin: 2em auto;
+}
+
+.contact-section .map .mapouter {
+  margin: auto;
 }
