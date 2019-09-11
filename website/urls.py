@@ -8,7 +8,7 @@ from .views import (
     MessageView,
     ContactUsView,
     AboutUsView,
-    StoresView,
+    ProductsView,
 )
 
 urlpatterns = [
@@ -20,5 +20,5 @@ urlpatterns = [
     path("message/", MessageView.as_view(), name="new_message"),
     path("contact/", ContactUsView.as_view(), name="contact"),
     path("about-us/", AboutUsView.as_view(), name="about"),
-    path("stores/", StoresView.as_view(), name="stores"),
+    path("products/", ProductsView.as_view(), name="products"),
 ]

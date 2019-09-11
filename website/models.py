@@ -50,3 +50,10 @@ class Message(BaseModel):
 
     def __str__(self):
         return self.title
+
+
+class Products(BaseModel):
+    name = models.CharField(max_length=100)
+    scientific_name = models.CharField(max_length=200)
+    price = models.IntegerField()
+    weight = models.IntegerField()

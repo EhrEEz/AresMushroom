@@ -76,6 +76,6 @@ class AboutUsView(TemplateView):
     template_name = "about_us.html"
 
 
-class StoresView(TemplateView):
+class ProductsView(TemplateView):
     model = Message
-    template_name = "stores.html"
+    template_name = "products.html"
