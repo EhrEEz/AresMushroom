@@ -14,47 +14,42 @@ Gallery
 
 {% block body %}
 <div id="main">
-<section class="gallerySection">
-<div class="gallery">
-  {% for obj in object_list %}
-  <figure data-id="{{obj.pk}}">
-    <img src="{{obj.photo.url}}" />
+  <section class="gallerySection">
+    <div class="gallery">
+      {% for obj in object_list %}
+      <figure data-id="{{obj.pk}}">
+        <img src="{{obj.photo.url}}" />
 
-    <figcaption>
-      <div class="additional">
-        <p class="caption">{{obj.caption}}</p>
-      </div>
-      <p class="credit">{{obj.credit}}</p>
-    </figcaption>
-
-
-  </figure>
-  {% endfor %}
+        <figcaption>
+          <div class="additional">
+            <p class="caption">{{obj.caption}}</p>
+          </div>
+          <p class="credit">{{obj.credit}}</p>
+        </figcaption>
 
 
-</div>
-</section>
+      </figure>
+      {% endfor %}
+
+
+    </div>
+  </section>
 </div>
 
 {% endblock body %}
 
 {% block extraJs %}
 <script type="text/javascript" language="javascript">
-    $(document).on('click','figure', function(){
-      var pk = $(this).data('id');
-      var galleryList = $('#main').html();
-      $('#main').load("/gallery/"+ pk +" #main-content", function() {
-        $('.close').click(function(){
-          $('#main').html(galleryList);
-          window.history.pushState('gallery', "gallery", '/gallery/');
-          //$('#main').load("/gallery/", function() {
-          /// can add another function here
-      //  });
+  $(document).on('click', 'figure', function() {
+    var pk = $(this).data('id');
+    var galleryList = $('#main').html();
+    $('#main').load("/gallery/" + pk + " #main-content", function() {
+      $('.close').click(function() {
+        $('#main').html(galleryList);
+        window.history.pushState('gallery', "gallery", '/gallery/');
       });
-
-
-        });
-        window.history.pushState('detail', pk + " details", '/gallery/' + pk);
     });
+    // window.history.pushState('detail', pk + " details", '/gallery/' + pk);
+  });
 </script>
 {% endblock extraJs %}

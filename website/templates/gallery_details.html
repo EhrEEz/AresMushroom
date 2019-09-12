@@ -1,4 +1,4 @@
-
+{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}
@@ -25,12 +25,10 @@ Photo {{obj.id}}
   </section>
 </div>
 {% endblock body %}
+
 {% block extraJs %}
-<script type="text/javascript" language="javascript">
-
-
-</script>
 {% endblock extraJs %}
+
 {% block detailgallery %}
 active
 {% endblock detailgallery %}

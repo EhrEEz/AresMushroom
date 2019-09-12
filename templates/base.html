@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="shortcut icon" type="image/svg" href="{% static 'images/logo/Favicon.svg' %}"/>
+  <link rel="shortcut icon" type="image/ico" href="{% static 'images/logo/Favicon.ico' %}"/>
   <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
   <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -31,7 +31,7 @@
         <li><a href="{% url 'home' %}" class="{{request.path|active_link:'home'}}" id="link1">Home</a></li>
         <li id="link2"><a href="{% url 'about' %}" class="{{request.path|active_link:'about'}}">About Us</a></li>
         <li id="link4"><a href="{% url 'faq' %}" class="{{request.path|active_link:'faq'}}{% block detailfaq %}{% endblock detailfaq %}">FAQs</a></li>
-        <li><a href="{% url 'home' %}"><span id="logo"><img src="{% static 'images/logo/LogoCircleBlue.svg' %}"></span></a></li>
+        <li id="logo-link"><a href="{% url 'home' %}"><span id="logo"><img src="{% static 'images/logo/LogoCircleBlue.svg' %}"></span></a></li>
         <li id="link3"><a href="{% url 'gallery' %}" class="{{request.path|active_link:'gallery'}}{% block detailgallery %}{% endblock detailgallery %}">Photos</a></li>
         <li id="link6"><a href="{% url 'products' %}" class="{{request.path|active_link:'products'}}">Products</a></li>
         <li id="link5"><a href="{% url 'contact' %}" class="{{request.path|active_link:'contact'}}">Contact Us</a></li>
@@ -48,6 +48,7 @@
   <script src="{% static 'js/jquery.min.js' %}"></script>
   <script src="{% static 'js/popper.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/app.js' %}"></script>
 </body>
 
 </html>

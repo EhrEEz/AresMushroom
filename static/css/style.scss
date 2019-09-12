@@ -81,18 +81,20 @@ nav.navpane.short{
   padding-bottom: 1.2em;
 }
 nav.navpane.transparent{
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0);
+  transition: 0.2s;
 
   a, u{
+    font-family: 'Stockport Regular';
     text-decoration: none !important;
-    color: $nav-static;
+    color: white;
   }
 
   ul{
     li{
       }
       .active{
-        color: $nav-active;
+        color: #B7FFCD;
       }
       :hover{
         a{
@@ -105,21 +107,21 @@ nav.navpane.transparent{
 .hero{
   width: 100%;
   margin: 0 auto;
-  height: 550px;
+  height: 100vh;
 
   .transparent{
     height: 100%;
     width: 100%;
     margin:0 auto;
-    padding: 150px 0;
     background: rgba(0,0,0,0.3);
 
     img{
       width: 200px;
       height: auto;
+      position: absolute;
+      top: calc(40vh - 100px);
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      left:calc(50% - 100px);
     }
   }
 }
@@ -210,6 +212,7 @@ nav.navpane.transparent{
     }
   }
 }
+
 .detailSection{
   padding: 1em;
   margin-top: 5em;
@@ -266,6 +269,7 @@ nav.navpane.transparent{
     }
   }
 }
+
 .close{
   img{
     width:1em;
@@ -515,4 +519,59 @@ nav.navpane.transparent{
       margin: auto;
     }
   }
+}
+
+
+// products
+
+.product-section{
+  width: 80%;
+  margin: 8em auto 0 auto;
+
+  .product-grid{
+    display: block;
+    width: 100%;
+
+    .product{
+      background: rgba(200,200,200, 0.2);
+      margin: 5px;
+      padding: 4em 2em;
+      display: inline-flex;
+      flex-direction: row-reverse;
+      text-align: right;
+      width: 100%;
+
+      .visible-caption{
+        width: auto;
+        margin-left: 5em;
+      }
+      .hidden-caption{
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        opacity: 0;
+        transition: 0.3s;
+        margin: auto 0;
+        transition: 0.2s linear;
+        .cp{
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          margin: auto;
+          padding: 0 5em;
+          border-right: 2px solid #000000;
+          h5{
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+
+    .product:hover{
+      .hidden-caption{
+        opacity: 1;
+      }
+    }
+  }
+
 }

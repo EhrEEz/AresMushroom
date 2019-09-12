@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 
 from el_pagination.views import AjaxListView
 
-from .models import Gallery, FAQ, Message
+from .models import Gallery, FAQ, Message, Product
 
 from .forms import MessageForm
 
@@ -76,6 +76,9 @@ class AboutUsView(TemplateView):
     template_name = "about_us.html"
 
 
-class ProductsView(TemplateView):
-    model = Message
+class ProductView(AjaxListView):
+    context_object_name = "products_list"
     template_name = "products.html"
+
+    def get_queryset(self):
+        return Product.objects.all()

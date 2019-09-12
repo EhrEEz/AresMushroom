@@ -67,16 +67,18 @@ nav.navpane.short {
 }
 
 nav.navpane.transparent {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0);
+  transition: 0.2s;
 }
 
 nav.navpane.transparent a, nav.navpane.transparent u {
+  font-family: 'Stockport Regular';
   text-decoration: none !important;
-  color: #738785;
+  color: white;
 }
 
 nav.navpane.transparent ul .active {
-  color: #051E85;
+  color: #B7FFCD;
 }
 
 nav.navpane.transparent ul :hover a {
@@ -86,23 +88,23 @@ nav.navpane.transparent ul :hover a {
 .hero {
   width: 100%;
   margin: 0 auto;
-  height: 550px;
+  height: 100vh;
 }
 
 .hero .transparent {
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 150px 0;
   background: rgba(0, 0, 0, 0.3);
 }
 
 .hero .transparent img {
   width: 200px;
   height: auto;
+  position: absolute;
+  top: calc(40vh - 100px);
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  left: calc(50% - 100px);
 }
 
 .gallerySection {
@@ -511,4 +513,56 @@ nav.navpane.transparent ul :hover a {
 
 .contact-section .map .mapouter {
   margin: auto;
+}
+
+.product-section {
+  width: 80%;
+  margin: 8em auto 0 auto;
+}
+
+.product-section .product-grid {
+  display: block;
+  width: 100%;
+}
+
+.product-section .product-grid .product {
+  background: rgba(200, 200, 200, 0.2);
+  margin: 5px;
+  padding: 4em 2em;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  text-align: right;
+  width: 100%;
+}
+
+.product-section .product-grid .product .visible-caption {
+  width: auto;
+  margin-left: 5em;
+}
+
+.product-section .product-grid .product .hidden-caption {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  opacity: 0;
+  transition: 0.3s;
+  margin: auto 0;
+  transition: 0.2s linear;
+}
+
+.product-section .product-grid .product .hidden-caption .cp {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  padding: 0 5em;
+  border-right: 2px solid #000000;
+}
+
+.product-section .product-grid .product .hidden-caption .cp h5 {
+  text-transform: uppercase;
+}
+
+.product-section .product-grid .product:hover .hidden-caption {
+  opacity: 1;
 }

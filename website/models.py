@@ -52,8 +52,18 @@ class Message(BaseModel):
         return self.title
 
 
-class Products(BaseModel):
+class Product(BaseModel):
     name = models.CharField(max_length=100)
     scientific_name = models.CharField(max_length=200)
     price = models.IntegerField()
-    weight = models.IntegerField()
+    weight = models.IntegerField(help_text="in Kg")
+    description = models.TextField()
+    image = models.ImageField(upload_to="Product", null=False, blank=False)
+
+    class Meta:
+        verbose_name = "Product"
+        verbose_name_plural = "Products"
+        ordering = ["-upload_date", "-modify_date"]
+
+    def __str__(self):
+        return self.name
