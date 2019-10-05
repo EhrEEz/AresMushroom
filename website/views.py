@@ -61,7 +61,7 @@ class MessageView(CreateView):
         return reverse("gallery")
 
 
-class ContactUsView(TemplateView):
+class ContactUsView(CreateView):
     model = Message
     form_class = MessageForm
     template_name = "contact.html"
