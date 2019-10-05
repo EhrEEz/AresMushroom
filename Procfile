@@ -1,1 +1,1 @@
-web: gunicorn AresMushroom.wsgi --log-file
+web: gunicorn AresMushroom.wsgi --log-file -
