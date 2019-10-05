@@ -526,13 +526,13 @@ nav.navpane.transparent ul :hover a {
 }
 
 .product-section .product-grid .product {
-  background: rgba(200, 200, 200, 0.2);
   margin: 5px;
   padding: 4em 2em;
   display: inline-flex;
   flex-direction: row-reverse;
   text-align: right;
   width: 100%;
+  z-index: 2;
 }
 
 .product-section .product-grid .product .visible-caption {
