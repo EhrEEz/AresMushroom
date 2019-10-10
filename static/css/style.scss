@@ -490,6 +490,7 @@ nav.navpane.transparent{
     display: grid;
     grid-template-columns: repeat(3, auto);
     background: rgba(220, 220, 220, 0.2);
+    transition: 1s;
 
     .contact-block{
       height: 250px;
@@ -540,6 +541,7 @@ nav.navpane.transparent{
       text-align: right;
       width: 100%;
       z-index: 2;
+      transition: 0.2s linear;
 
       .visible-caption{
         width: auto;
@@ -568,6 +570,7 @@ nav.navpane.transparent{
     }
 
     .product:hover{
+      background: rgba(250,250,250,9);
       .hidden-caption{
         opacity: 1;
       }

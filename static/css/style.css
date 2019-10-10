@@ -482,6 +482,7 @@ nav.navpane.transparent ul :hover a {
   display: grid;
   grid-template-columns: repeat(3, auto);
   background: rgba(220, 220, 220, 0.2);
+  transition: 1s;
 }
 
 .contact-section .basic-contact .contact-block {
@@ -533,6 +534,7 @@ nav.navpane.transparent ul :hover a {
   text-align: right;
   width: 100%;
   z-index: 2;
+  transition: 0.2s linear;
 }
 
 .product-section .product-grid .product .visible-caption {
@@ -561,6 +563,10 @@ nav.navpane.transparent ul :hover a {
 
 .product-section .product-grid .product .hidden-caption .cp h5 {
   text-transform: uppercase;
+}
+
+.product-section .product-grid .product:hover {
+  background: #fafafa;
 }
 
 .product-section .product-grid .product:hover .hidden-caption {
