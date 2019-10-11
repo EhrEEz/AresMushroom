@@ -1,4 +1,4 @@
-from .models import Gallery, FAQ, Message
+from .models import Gallery, FAQ, Message, Post
 
 
 def total_posts(request):
