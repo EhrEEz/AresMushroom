@@ -123,6 +123,38 @@ nav.navpane.transparent{
       display: block;
       left:calc(50% - 100px);
     }
+    .sideline{
+      color: white;
+      font-family: 'Stockport Regular';
+      font-size: 1.8rem;
+
+
+      .left{
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        left: 1.5em;
+        bottom: 3em;
+        position: absolute;
+        opacity: 0.5;
+      }
+      .right{
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        right: 1.5em;
+        bottom:3em;
+        position: absolute;
+        opacity: 0.5;
+      }
+      .bottom{
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        font-family: $desc-font;
+        font-weight: bold;
+        transform: scaleX(2);
+        transition: 0.5s;
+      }
+    }
   }
 }
 .gallerySection{
@@ -541,6 +573,7 @@ nav.navpane.transparent{
       text-align: right;
       width: 100%;
       z-index: 2;
+      animation: proAnimation 0.4s 1 0s ease-in;
       transition: 0.2s linear;
 
       .visible-caption{
@@ -577,4 +610,14 @@ nav.navpane.transparent{
     }
   }
 
+}
+@keyframes proAnimation{
+    0%{
+        transform: rotate(0) translateY(-1em);
+        opacity: 0.5;
+        }
+    100%{
+        transform: rotate(0) translateY(0px);
+        opacity: 1;
+        }
 }
