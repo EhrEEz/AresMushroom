@@ -13,6 +13,10 @@ from .models import Gallery, FAQ, Message, Product
 
 from .forms import MessageForm
 
+from django.shortcuts import render, get_object_or_404
+
+from django.urls import reverse
+
 
 class BaseView(TemplateView):
     template_name = "base.html"
@@ -22,6 +26,14 @@ class BaseView(TemplateView):
 class HomeView(TemplateView):
     model = Gallery
     template_name = "home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["carousel_data"] = Gallery.objects.filter(photo__isnull=False).exclude(
+            photo=""
+        )[:5]
+        context["product_data"] = Product.objects.all()[:2]
+        return context
 
 
 class GalleryView(AjaxListView):
