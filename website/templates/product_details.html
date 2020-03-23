@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{product.name}}
+{% endblock title %}
+
+{% block body %}
+<div id="main-content">
+<div class="close" data-id="{{object.id}}">
+  <img id="close" src="{% static '/images/close.png' %}" />
+  </div>
+<section class="detailSection">
+
+  <div class="imagewrap">
+    <a href="{{object.image.url}}" target="_blank"><img src="{{object.image.url}}" id="myImg" /></a>
+  </div>
+  <div class="content">
+      <h1>{{object.name}}</h1>
+      <div class="specs">
+        <h6>Weight:{{object.weight}}</h6>
+        <h6>Price:{{object.price}}</h6>
+        </div>
+      <span style="font-style:italic;">{{object.scientific_name}}</span>
+    <p>{{object.description}}</p>
+  </div>
+
+  <p class="credit">{{obj.name}}</p>
+  </section>
+</div>
+{% endblock body %}
+
+{% block extraJs %}
+{% endblock extraJs %}
+
+{% block detailproduct %}
+active
+{% endblock detailproduct %}

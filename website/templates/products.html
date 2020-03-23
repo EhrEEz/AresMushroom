@@ -3,10 +3,12 @@
 Products
 {% endblock title %}
 {% block body %}
+<div id="main">
+
 <section class="product-section">
   <div class="product-grid">
     {% for products in products_list %}
-    <div class="product">
+    <div class="product" data-id="{{products.pk}}">
       <div class="visible-caption">
         <h3>{{products.name}}</h3>
         <span><i>{{products.scientific_name}}</i></span>
@@ -26,5 +28,22 @@ Products
   </div>
 </section>
 
+</div>
 
 {% endblock body %}
+
+{% block extraJs %}
+<script type="text/javascript" language="javascript">
+  $(document).on('click', '.product', function() {
+    var pk = $(this).data('id');
+    var product_list = $('#main').html();
+    $('#main').load("/products/" + pk + " #main-content", function() {
+      $('.close').click(function() {
+        $('#main').html(product_list);
+        window.history.pushState('products', "products", '/products/');
+      });
+    });
+    // window.history.pushState('detail', pk + " details", '/gallery/' + pk);
+  });
+</script>
+{% endblock extraJs %}

@@ -169,23 +169,13 @@ nav.navpane.transparent ul :hover a {
 }
 
 .home-content .banner {
-  text-align: center;
-  padding: 2em;
-  background: #32401d;
-  width: 80%;
-  margin: 3em auto 0 auto;
-  background: linear-gradient(288deg, #32401d 0%, #4c5826 100%);
+  width: 60%;
+  padding: 0;
+  margin: 2em auto 0 auto;
 }
 
-.home-content .banner h1 {
-  font-family: 'Patua One', cursive;
-  color: #fafffa;
-  font-size: 4em;
-  margin-top: 1em;
-}
-
-.home-content .banner h2 {
-  font-style: italic;
+.home-content .banner img:hover {
+  cursor: pointer;
 }
 
 .home-content .divider {
@@ -202,7 +192,7 @@ nav.navpane.transparent ul :hover a {
   float: left;
   width: 25%;
   padding-left: 20px;
-  text-align: right;
+  text-align: center;
 }
 
 .home-content .divider .item {

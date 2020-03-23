@@ -94,3 +94,8 @@ class ProductView(AjaxListView):
 
     def get_queryset(self):
         return Product.objects.all()
+
+
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = "product_details.html"

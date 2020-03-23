@@ -39,9 +39,7 @@ Home
     </div>
 
     <div class="banner">
-      <h1>KING OYSTER MUSHROOM</h1>
-      <h2>Pleurotus Eryngii</h2>
-      <p>NOW AVAILABLE</p>
+    <a href="{% url 'products' %}"><img src="{% static 'images/KingOyster.svg' %}"/></a>  
     </div>
     <div class="divider">
       <div class="left">
@@ -80,6 +78,8 @@ Home
         </div>
         </div>
       </div>
+
+
       <div class="right">
         {% for things in product_data %}
           <div class="item">
