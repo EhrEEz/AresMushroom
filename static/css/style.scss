@@ -116,12 +116,12 @@ nav.navpane.transparent{
     background: rgba(0,0,0,0.3);
 
     img{
-      width: 200px;
+      width: 300px;
       height: auto;
       position: absolute;
       top: calc(40vh - 100px);
       display: block;
-      left:calc(50% - 100px);
+      left:calc(50% - 150px);
       transition: 0.5s;
     }
     .mid{
@@ -136,6 +136,10 @@ nav.navpane.transparent{
         font-family: $desc-font;
         font-weight: bold;
         transition: 0.5s;
+
+        i{
+          animation: voilla 0.8s infinite 0s ease;
+        }
       }
     }
   }
@@ -320,7 +324,7 @@ nav.navpane.transparent{
   }
 }
 .specs{
-  
+
 }
 .detailSection{
   padding: 1em;
@@ -652,7 +656,7 @@ nav.navpane.transparent{
       z-index: 2;
       animation: proAnimation 0.4s 1 0s ease-in;
       transition: 0.2s linear;
-
+      cursor: pointer;
       .visible-caption{
         width: auto;
         margin-left: 5em;
@@ -696,5 +700,19 @@ nav.navpane.transparent{
     100%{
         transform: rotate(0) translateY(0px);
         opacity: 1;
+        }
+}
+@keyframes voilla{
+    0%{
+        transform: rotate(0) translateY(0);
+        opacity: 0.5;
+        }
+    50%{
+        transform: rotate(0) translateY(10%);
+        opacity: 1;
+        }
+    100%{
+        transform: rotate(0) translateY(0);
+        opacity: 0.5;
         }
 }

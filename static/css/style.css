@@ -100,12 +100,12 @@ nav.navpane.transparent ul :hover a {
 }
 
 .hero .transparent img {
-  width: 200px;
+  width: 300px;
   height: auto;
   position: absolute;
   top: calc(40vh - 100px);
   display: block;
-  left: calc(50% - 100px);
+  left: calc(50% - 150px);
   transition: 0.5s;
 }
 
@@ -122,6 +122,10 @@ nav.navpane.transparent ul :hover a {
   font-family: "Montserrat Regular", sans-serif;
   font-weight: bold;
   transition: 0.5s;
+}
+
+.hero .transparent .mid .bottom i {
+  animation: voilla 0.8s infinite 0s ease;
 }
 
 .home-content .greet-text {
@@ -652,6 +656,7 @@ nav.navpane.transparent ul :hover a {
   z-index: 2;
   animation: proAnimation 0.4s 1 0s ease-in;
   transition: 0.2s linear;
+  cursor: pointer;
 }
 
 .product-section .product-grid .product .visible-caption {
@@ -698,5 +703,20 @@ nav.navpane.transparent ul :hover a {
   100% {
     transform: rotate(0) translateY(0px);
     opacity: 1;
+  }
+}
+
+@keyframes voilla {
+  0% {
+    transform: rotate(0) translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: rotate(0) translateY(10%);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0) translateY(0);
+    opacity: 0.5;
   }
 }

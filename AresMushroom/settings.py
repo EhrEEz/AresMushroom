@@ -20,13 +20,14 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, "website/templates")
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "kq5%bt_%b)6evrbkzy(r4+@p%84_^0o)2=6^1+1k7u11!8=+&_"
+SECRET_KEY = os.environ.get(
+    "DJANGO_SECRET_KEY", "kq5%bt_%b)6evrbkzy(r4+@p%84_^0o)2=6^1+1k7u11!8=+&_"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 
-ALLOWED_HOSTS = ["*"]
-
+ALLOWED_HOSTS = ["aresmushroom.com"]
 
 # Application definition
 
@@ -83,8 +84,11 @@ WSGI_APPLICATION = "AresMushroom.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "aresmush_AresMshroom",
+        "USER": "ares",
+        "PASSWORD": "G8gle.com",
+        "HOST": "localhost",
     }
 }
 
