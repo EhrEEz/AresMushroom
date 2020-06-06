@@ -1,5 +1,5 @@
 beautifulsoup4==4.8.0
-Django==2.2.5
+Django==2.2.13
 django-bootstrap4==1.0.1
 django-el-pagination==3.2.4
 django-jinja==2.4.1
